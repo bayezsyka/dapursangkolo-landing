@@ -753,9 +753,10 @@ a {
   }
 
   .hero-photo-note {
-    right: -0.3rem;
-    bottom: 2.25rem;
-    font-size: 0.75rem;
+    right: 0.5rem;
+    bottom: 5.25rem;
+    z-index: 9;
+    font-size: 0.78rem;
   }
 
   .mobile-hero-cta {
@@ -908,14 +909,25 @@ a {
     align-items: start;
     gap: 3rem;
     padding-bottom: 6rem;
+    min-width: 0;
+  }
+
+  .order-inner > * {
+    min-width: 0;
   }
 
   .order h2 {
-    font-size: clamp(3.7rem, 15.5vw, 5.2rem);
+    font-size: clamp(2.35rem, 11.5vw, 4.4rem);
+    overflow-wrap: break-word;
+  }
+
+  .order-details p {
+    font-size: clamp(0.95rem, 4vw, 1.05rem);
   }
 
   .order-cta {
     width: 100%;
+    max-width: 100%;
   }
 
   .site-footer {
