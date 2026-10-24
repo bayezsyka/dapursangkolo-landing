@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Camera, MessageCircle } from "lucide-react";
 import { MotionController } from "@/components/MotionController";
+import { TestimonialsSection } from "@/components/TestimonialsSection";
 
 const whatsappMessage =
   "Halo Dapur Sangkolo, saya ingin pesan sandwich. Boleh minta informasi menu dan jadwal PO?";
@@ -172,6 +173,8 @@ export default function Home() {
             </a>
           </div>
         </section>
+
+        <TestimonialsSection />
 
         <section id="pesan" className="order" aria-labelledby="order-title">
           <div className="order-inner" data-reveal>
