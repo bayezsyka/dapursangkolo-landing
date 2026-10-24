@@ -122,7 +122,6 @@ export default function Home() {
                 key={frame.src}
                 className={frame.className}
                 data-reveal
-                data-parallax={frame.speed}
                 style={{ "--reveal-delay": `${index * 90}ms` } as React.CSSProperties}
               >
                 <div className="product-image-wrap">
