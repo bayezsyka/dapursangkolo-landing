@@ -291,6 +291,154 @@ a {
   transform: scaleX(1.25);
 }
 
+.menu-editorial {
+  position: relative;
+  padding: clamp(5.5rem, 9vw, 9rem) var(--page-gutter);
+  background: var(--sand);
+  color: var(--ink);
+}
+
+.menu-editorial-inner {
+  max-width: 82rem;
+  margin: 0 auto;
+}
+
+.menu-editorial-header h2 {
+  margin: 0 0 clamp(2.5rem, 5vw, 4rem);
+  font-family: var(--display);
+  font-size: clamp(3.2rem, 7vw, 5.5rem);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  line-height: 0.92;
+  text-wrap: balance;
+}
+
+.menu-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(16rem, auto);
+  align-items: end;
+  justify-content: space-between;
+  gap: clamp(2rem, 5vw, 4.5rem);
+  padding: clamp(2.5rem, 4.5vw, 3.5rem) 0;
+  border-top: 1.5px solid var(--ink);
+}
+
+.menu-item:last-child {
+  border-bottom: 1.5px solid var(--ink);
+}
+
+.menu-item-main {
+  display: flex;
+  flex-direction: column;
+  max-width: 48rem;
+}
+
+.menu-item-meta {
+  display: flex;
+  align-items: baseline;
+  gap: clamp(1rem, 2vw, 1.75rem);
+  margin-bottom: 1rem;
+}
+
+.menu-item-index {
+  font-family: var(--display);
+  font-size: clamp(1.2rem, 1.8vw, 1.5rem);
+  color: var(--sage);
+  letter-spacing: -0.02em;
+}
+
+.menu-item-name {
+  margin: 0;
+  font-family: var(--display);
+  font-size: clamp(2.2rem, 4.2vw, 3.4rem);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+  color: var(--ink);
+}
+
+.menu-item-desc {
+  margin: 0 0 1.5rem;
+  max-width: 44ch;
+  font-size: clamp(1rem, 1.35vw, 1.15rem);
+  font-weight: 600;
+  line-height: 1.65;
+  color: rgba(8, 26, 42, 0.82);
+}
+
+.menu-item-nutrition {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.92rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  color: var(--navy);
+}
+
+.menu-item-sep {
+  color: var(--sage);
+  font-weight: 900;
+}
+
+.menu-item-action {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1.25rem;
+  flex-shrink: 0;
+}
+
+.menu-item-price {
+  font-family: var(--display);
+  font-size: clamp(2.2rem, 3.8vw, 3.2rem);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: var(--ink);
+}
+
+.menu-item-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  min-height: 52px;
+  padding: 0.85rem 1.6rem;
+  border: 1.5px solid var(--ink);
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--sand);
+  font-size: 0.95rem;
+  font-weight: 850;
+  transition: transform 180ms ease-out, background-color 180ms ease-out, color 180ms ease-out;
+}
+
+.menu-item-cta:hover,
+.menu-item-cta:active {
+  background: var(--navy);
+  color: var(--sand);
+  transform: translateY(-2px);
+}
+
+.menu-item-cta--cheese {
+  background: var(--sage);
+  color: var(--ink);
+  border-color: var(--ink);
+}
+
+.menu-item-cta--cheese:hover,
+.menu-item-cta--cheese:active {
+  background: var(--butter);
+  color: var(--ink);
+  transform: translateY(-2px);
+}
+
 .showcase {
   position: relative;
   min-height: 160vh;
@@ -944,6 +1092,18 @@ a {
     opacity: 1;
     transform: translate3d(0, var(--parallax-y, 0px), 0);
   }
+
+  .motion-ready .menu-item[data-reveal] {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 650ms cubic-bezier(0.16, 1, 0.3, 1) var(--reveal-delay),
+      transform 650ms cubic-bezier(0.16, 1, 0.3, 1) var(--reveal-delay);
+  }
+
+  .motion-ready .menu-item[data-reveal].is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes hero-enter {
@@ -994,6 +1154,21 @@ a {
 @media (max-width: 760px) {
   body {
     padding-bottom: calc(5.25rem + env(safe-area-inset-bottom));
+  }
+
+  .menu-item {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+    padding: 2.25rem 0;
+  }
+
+  .menu-item-action {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding-top: 0.75rem;
+    border-top: 1px dashed rgba(8, 26, 42, 0.2);
   }
 
   .hero {

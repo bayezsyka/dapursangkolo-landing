@@ -3,9 +3,16 @@ import { Camera, MessageCircle } from "lucide-react";
 import { MotionController } from "@/components/MotionController";
 import { TestimonialsSection } from "@/components/TestimonialsSection";
 
-const whatsappMessage =
-  "Halo Dapur Sangkolo, saya ingin pesan sandwich. Boleh minta informasi menu dan jadwal PO?";
-const whatsappUrl = `https://wa.me/6285179637099?text=${encodeURIComponent(whatsappMessage)}`;
+const baseWhatsapp = "https://wa.me/6285179637099";
+const defaultWhatsappMessage =
+  "Halo Dapur Sangkolo, saya ingin pesan sandwich. Boleh minta info pemesanan?";
+const whatsappUrl = `${baseWhatsapp}?text=${encodeURIComponent(defaultWhatsappMessage)}`;
+const orderOriUrl = `${baseWhatsapp}?text=${encodeURIComponent(
+  "Halo Dapur Sangkolo, saya ingin pesan Wanpaku Sandwich: Ori Smokey Egg (Rp 20.000)."
+)}`;
+const orderCheeseUrl = `${baseWhatsapp}?text=${encodeURIComponent(
+  "Halo Dapur Sangkolo, saya ingin pesan Wanpaku Sandwich: Cheese Smokey Egg (Rp 22.000)."
+)}`;
 const instagramUrl = "https://www.instagram.com/dapur.sangkolo/";
 
 const productFrames = [
@@ -39,8 +46,8 @@ export default function Home() {
   return (
     <>
       <MotionController />
-      <a className="skip-link" href="#produk">
-        Lewati ke produk
+      <a className="skip-link" href="#menu">
+        Lewati ke menu
       </a>
 
       <main>
@@ -104,16 +111,92 @@ export default function Home() {
             </div>
           </div>
 
-          <a className="hero-scroll" href="#produk" aria-label="Lihat produk">
+          <a className="hero-scroll" href="#menu" aria-label="Lihat pilihan menu">
             <span aria-hidden="true" />
-            Lihat ke bawah
+            Lihat menu
           </a>
+        </section>
+
+        <section id="menu" className="menu-editorial" aria-labelledby="menu-title">
+          <div className="menu-editorial-inner">
+            <header className="menu-editorial-header" data-reveal>
+              <h2 id="menu-title">Pilihan Menu.</h2>
+            </header>
+
+            <div className="menu-list">
+              <article className="menu-item" data-reveal>
+                <div className="menu-item-main">
+                  <div className="menu-item-meta">
+                    <span className="menu-item-index">01</span>
+                    <h3 className="menu-item-name">Ori Smokey Egg</h3>
+                  </div>
+                  <p className="menu-item-desc">
+                    Roti tawar lembut, 1 butir telur ayam, 2 lembar smoke beef, sayuran segar, dan
+                    saus spesial.
+                  </p>
+                  <div className="menu-item-nutrition">
+                    <span>25 g protein</span>
+                    <span className="menu-item-sep" aria-hidden="true">
+                      /
+                    </span>
+                    <span>~420 kkal</span>
+                  </div>
+                </div>
+
+                <div className="menu-item-action">
+                  <span className="menu-item-price">Rp 20.000</span>
+                  <a
+                    href={orderOriUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="menu-item-cta"
+                    aria-label="Pesan Ori Smokey Egg via WhatsApp"
+                  >
+                    <span>Pesan via WhatsApp</span>
+                    <MessageCircle aria-hidden="true" size={19} strokeWidth={2.2} />
+                  </a>
+                </div>
+              </article>
+
+              <article className="menu-item" data-reveal>
+                <div className="menu-item-main">
+                  <div className="menu-item-meta">
+                    <span className="menu-item-index">02</span>
+                    <h3 className="menu-item-name">Cheese Smokey Egg</h3>
+                  </div>
+                  <p className="menu-item-desc">
+                    Kelezatan Ori Smokey Egg dengan tambahan slice keju gurih dan creamy yang meleleh.
+                  </p>
+                  <div className="menu-item-nutrition">
+                    <span>28 g protein</span>
+                    <span className="menu-item-sep" aria-hidden="true">
+                      /
+                    </span>
+                    <span>~480 kkal</span>
+                  </div>
+                </div>
+
+                <div className="menu-item-action">
+                  <span className="menu-item-price">Rp 22.000</span>
+                  <a
+                    href={orderCheeseUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="menu-item-cta menu-item-cta--cheese"
+                    aria-label="Pesan Cheese Smokey Egg via WhatsApp"
+                  >
+                    <span>Pesan via WhatsApp</span>
+                    <MessageCircle aria-hidden="true" size={19} strokeWidth={2.2} />
+                  </a>
+                </div>
+              </article>
+            </div>
+          </div>
         </section>
 
         <section id="produk" className="showcase" aria-labelledby="showcase-title">
           <div className="showcase-heading" data-reveal>
             <h2 id="showcase-title">Lihat Wanpaku dari dekat.</h2>
-            <p>Menu dan jadwal PO dapat ditanyakan langsung melalui WhatsApp.</p>
           </div>
 
           <div className="product-collage">
@@ -179,7 +262,7 @@ export default function Home() {
           <div className="order-inner" data-reveal>
             <h2 id="order-title">Mau pesan Wanpaku?</h2>
             <div className="order-details">
-              <p>Tanya menu dan jadwal PO langsung ke Dapur Sangkolo.</p>
+              <p>Pesan Ori Smokey Egg atau Cheese Smokey Egg langsung via WhatsApp.</p>
               <a href={whatsappUrl} target="_blank" rel="noreferrer" className="order-cta">
                 <MessageCircle aria-hidden="true" size={24} strokeWidth={2.2} />
                 <span>Buka WhatsApp</span>

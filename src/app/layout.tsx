@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: "Dapur Sangkolo | Wanpaku Sandwich",
   description:
-    "Dapur Sangkolo menghadirkan Wanpaku Sandwich. Hubungi kami melalui WhatsApp untuk informasi menu dan jadwal PO.",
+    "Wanpaku Sandwich dari Dapur Sangkolo: Ori Smokey Egg (Rp 20.000) dan Cheese Smokey Egg (Rp 22.000). Pesan langsung via WhatsApp.",
   alternates: {
     canonical: "https://dapur.sangkolo.com/",
   },
@@ -19,7 +19,8 @@ export const metadata: Metadata = {
     url: siteUrl,
     siteName: "Dapur Sangkolo",
     title: "Dapur Sangkolo | Wanpaku Sandwich",
-    description: "Wanpaku Sandwich dari Dapur Sangkolo. Tanya menu dan jadwal PO melalui WhatsApp.",
+    description:
+      "Wanpaku Sandwich dari Dapur Sangkolo: Ori Smokey Egg (Rp 20.000) dan Cheese Smokey Egg (Rp 22.000). Pesan langsung via WhatsApp.",
     images: [
       {
         url: "/og-dapur-sangkolo.jpg",
@@ -32,7 +33,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Dapur Sangkolo | Wanpaku Sandwich",
-    description: "Wanpaku Sandwich dari Dapur Sangkolo. Tanya menu dan jadwal PO melalui WhatsApp.",
+    description:
+      "Wanpaku Sandwich dari Dapur Sangkolo: Ori Smokey Egg (Rp 20.000) dan Cheese Smokey Egg (Rp 22.000). Pesan langsung via WhatsApp.",
     images: ["/og-dapur-sangkolo.jpg"],
   },
   robots: {
