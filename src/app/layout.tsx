@@ -16,6 +16,7 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon-48x48.png", type: "image/png", sizes: "48x48" },
       { url: "/icon.png", type: "image/png", sizes: "192x192" },
       { url: "/icon-512.png", type: "image/png", sizes: "512x512" },
     ],
@@ -79,13 +80,23 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "WebSite",
-  name: "Dapur Sangkolo",
-  alternateName: [
-    "Dapur Sangkolo Wanpaku Sandwich",
-    "Wanpaku Sandwich Dapur Sangkolo",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      name: "Dapur Sangkolo",
+      alternateName: [
+        "Dapur Sangkolo Wanpaku Sandwich",
+        "Wanpaku Sandwich Dapur Sangkolo",
+      ],
+      url: siteUrl,
+    },
+    {
+      "@type": "Organization",
+      name: "Dapur Sangkolo",
+      url: siteUrl,
+      logo: `${siteUrl}/icon-512.png`,
+    },
   ],
-  url: siteUrl,
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
