@@ -284,7 +284,27 @@ export default function Home() {
               <Camera aria-hidden="true" size={21} strokeWidth={2.1} />
               <span>@dapur.sangkolo</span>
             </a>
-            <p>Wanpaku Sandwich oleh Dapur Sangkolo.</p>
+            <p>
+              Dapur Sangkolo adalah lini usaha kuliner dari{" "}
+              <a
+                href="https://sangkolo.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline hover:text-white"
+              >
+                PT Sangkolo Mitra Teknologi
+              </a>
+              , didirikan oleh{" "}
+              <a
+                href="https://sangkolo.com/founder"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline hover:text-white"
+              >
+                A. Faidhullah Farros Basykailakh
+              </a>
+              .
+            </p>
           </footer>
         </section>
       </main>
