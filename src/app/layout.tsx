@@ -83,18 +83,38 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "WebSite",
+      "@id": `${siteUrl}/#website`,
       name: "Dapur Sangkolo",
       alternateName: [
         "Dapur Sangkolo Wanpaku Sandwich",
         "Wanpaku Sandwich Dapur Sangkolo",
       ],
       url: siteUrl,
+      publisher: {
+        "@type": "Organization",
+        "@id": "https://sangkolo.com/#organization",
+        name: "PT Sangkolo Mitra Teknologi",
+        url: "https://sangkolo.com",
+      },
     },
     {
-      "@type": "Organization",
+      "@type": ["FoodEstablishment", "Organization"],
+      "@id": `${siteUrl}/#organization`,
       name: "Dapur Sangkolo",
       url: siteUrl,
       logo: `${siteUrl}/icon-512.png`,
+      description:
+        "Unit kuliner kreatif dan katering acara terpadu di bawah naungan PT Sangkolo Mitra Teknologi, menyajikan spesialisasi Wanpaku Sandwich.",
+      parentOrganization: {
+        "@type": "Organization",
+        "@id": "https://sangkolo.com/#organization",
+        name: "PT Sangkolo Mitra Teknologi",
+        url: "https://sangkolo.com",
+      },
+      sameAs: [
+        "https://sangkolo.com",
+        "https://instagram.com/dapur.sangkolo",
+      ],
     },
   ],
 };
